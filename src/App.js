@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Contacts from './components/contacts/Contacts';
+import Header from './components/layouts/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import AddContact from './components/contacts/AddContact';
+
+import { Provider } from './context';
 
 function App() {
   return (
+    <Provider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header branding="Contact Manager"/>
+      <div className='container'>
+        <AddContact />
+      <Contacts /> 
+      </div>
     </div>
-  );
+    </Provider>
+ );
 }
 
 export default App;
